@@ -7,14 +7,13 @@ public class Proventos extends CalculoBase{
 	private int qtdeHorasNoturnas;
 	private int qtdeHorasExtras50Not;
 	private int qtdeHorasExtras100Not;
-	private Double OutrosProventos;
 	
 	public Proventos() {
 	}
 
 	public Proventos(String nomeEmpregado, String matricula, int horasBase, Double salarioBase,
 			int qtdeHorasTrabalhadas, int qtdeHorasExtras50, int qtdeHorasExtras100, int qtdeHorasNoturnas,
-			int qtdeHorasExtras50Not, int qtdeHorasExtras100Not, Double OutrosProventos) {
+			int qtdeHorasExtras50Not, int qtdeHorasExtras100Not) {
 		super(nomeEmpregado, matricula, horasBase, salarioBase);
 		this.qtdeHorasTrabalhadas = qtdeHorasTrabalhadas;
 		this.qtdeHorasExtras50 = qtdeHorasExtras50;
@@ -22,7 +21,6 @@ public class Proventos extends CalculoBase{
 		this.qtdeHorasNoturnas = qtdeHorasNoturnas;
 		this.qtdeHorasExtras50Not = qtdeHorasExtras50Not;
 		this.qtdeHorasExtras100Not = qtdeHorasExtras100Not;
-		this.OutrosProventos = OutrosProventos;
 	}
 
 	public int getQtdeHorasTrabalhadas() {
@@ -71,15 +69,7 @@ public class Proventos extends CalculoBase{
 
 	public void setqtdeHorasExtras100Not(int qtdeHorasExtras100Not) {
 		this.qtdeHorasExtras100Not = qtdeHorasExtras100Not;
-	};
-	
-	public Double getOutrosProventos() {
-		return OutrosProventos;
 	}
-
-	public void setOutrosProventos(Double OutrosProventos) {
-		this.OutrosProventos = OutrosProventos;
-	};
 	
 	public Double calcularHorasTrabalhadas() {
         return calcularSalarioHora() * qtdeHorasTrabalhadas;
