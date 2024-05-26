@@ -14,8 +14,6 @@ public class CalculoBase extends Cadastro{
 		this.salarioBase = salarioBase;
 	}
 
-	
-
 	public int getHorasBase() {
 		return horasBase;
 	}
@@ -32,34 +30,28 @@ public class CalculoBase extends Cadastro{
 		this.salarioBase = salarioBase;
 	}
 
-	public Double SalarioHora(Double salarioBase, int horasBase) {
-		Double SalarioHora = salarioBase / horasBase;
-		return SalarioHora;
-	}
-
-	public Double HoraExtra50VlrHora(Double SalarioHora) {
-		Double Horaextra50 = SalarioHora + (SalarioHora / 2);
-		return Horaextra50;
-	}
-
-	public Double HoraExtra100VlrHora(Double SalarioHora) {
-		Double HoraExtra100 = SalarioHora * 2;
-		return HoraExtra100;
-	}
-
-	public Double HoraNoturnaVlrHora(Double SalarioHora) {
-		Double HoraNoturnaVlrHora = SalarioHora + (SalarioHora * 0.20);
-		return HoraNoturnaVlrHora;
-	}
-
-	public Double HoraExtra50NotVlrHora(Double HoraNoturnaVlrHora) {
-		Double HoraExtra50Not = HoraNoturnaVlrHora + (HoraNoturnaVlrHora / 2);
-		return HoraExtra50Not;
-	}
-
-	public Double HoraExtra100NotVlrHora(Double HoraNoturnaVlrHora) {
-		Double HoraExtra100Not = HoraNoturnaVlrHora * 2;
-		return HoraExtra100Not;
+	public Double calcularSalarioHora() {
+		return salarioBase / horasBase;
 	}
 	
+	public Double calcularHoraExtra50() {
+		return calcularSalarioHora() * 1.5;
+	}
+	
+	public Double calcularHoraExtra100() {
+		return calcularSalarioHora() * 2;
+	}
+	
+	public Double calcularHoraNoturna() {
+		return calcularSalarioHora() * 1.2;
+	}
+	
+	public Double calcularHoraExtra50Noturna() {
+		return calcularHoraNoturna() * 1.5;
+	}
+	
+	public Double calcularHoraExtra100Noturna() {
+		return calcularHoraNoturna() * 2;
+	}
+
 }
